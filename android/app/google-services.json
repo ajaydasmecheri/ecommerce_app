@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "753786424636",
+    "project_id": "esaybuy-827f1",
+    "storage_bucket": "esaybuy-827f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753786424636:android:dd8eed875f81c4e17ae239",
+        "android_client_info": {
+          "package_name": "com.example.easybuy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9RvvlK_s7elqECSXrwDC_Befy41s1-O8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
