@@ -2,7 +2,7 @@ import 'package:easybuy/routers.dart';
 import 'package:easybuy/screens/buynow.dart';
 import 'package:easybuy/screens/cartpage.dart';
 import 'package:easybuy/screens/fashion.dart';
-import 'package:easybuy/screens/home2.dart';
+
 
 import 'package:easybuy/screens/homepage.dart';
 import 'package:easybuy/screens/loginpage.dart';
@@ -31,7 +31,7 @@ class Rootpage extends StatelessWidget {
         Routers.productbuyview:(context) => const Productbuyview(),
         Routers.buynow:(context) => const Buynow(),
         Routers.trackorder:(context) => const Trackorder(),
-        Routers.home2:(context) =>  Home2(),
+      
         
         
     

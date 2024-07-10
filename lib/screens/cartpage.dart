@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easybuy/routers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,8 @@ class CartPage extends StatelessWidget {
             return const Center(child: Text("Something went wrong"));
           }
           if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-            return const Center(child: Text("There are no products in the cart"));
+            return const Center(
+                child: Text("There are no products in the cart"));
           }
 
           final data = snapshot.data!.docs;
@@ -53,7 +55,8 @@ class CartPage extends StatelessWidget {
                             leading: SizedBox(
                               width: 50,
                               height: 50,
-                              child: Image.network(cartInfo["image"], fit: BoxFit.cover),
+                              child: Image.network(cartInfo["image"],
+                                  fit: BoxFit.cover),
                             ),
                             title: Text(cartInfo["productname"]),
                             subtitle: Text(
@@ -72,6 +75,17 @@ class CartPage extends StatelessWidget {
                                     },
                                     icon: const Icon(Icons.delete),
                                   ),
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.pushNamed(
+                                            context, Routers.buynow,
+                                            arguments: {
+                                              "totalprice": totalPrice,
+                                              "useremail": FirebaseAuth
+                                                  .instance.currentUser?.email
+                                            });
+                                      },
+                                      icon: const Icon(Icons.file_download_done),)
                                 ],
                               ),
                             ),
@@ -94,9 +108,6 @@ class CartPage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    ElevatedButton(onPressed: (){
-                      
-                    }, child: const Text("buy now"))
                   ],
                 ),
               ),
@@ -107,4 +118,3 @@ class CartPage extends StatelessWidget {
     );
   }
 }
-
